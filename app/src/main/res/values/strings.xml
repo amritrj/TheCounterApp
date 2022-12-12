@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">The Counter App</string>
+    <string name="_0">0</string>
+    <string name="the_counter_app">The Counter App</string>
+    <string name="increase">Increase</string>
+    <string name="decrease">Decrease</string>
+    <string name="Reset">Reset</string>
+    <string name="click_me">Click Me</string>
+
+</resources>

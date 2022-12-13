@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     TextView welcome_text, counter_text;
-    Button clickBtn;
+    Button clickBtn, increaseBtn, decreaseBtn;
     int counter = 0;
 
     @Override
@@ -20,17 +20,43 @@ public class MainActivity extends AppCompatActivity {
         welcome_text = findViewById(R.id.welcome_text);
         counter_text = findViewById(R.id.counter_text);
         clickBtn = findViewById(R.id.clickBtn);
+        increaseBtn = findViewById(R.id.increaseBtn);
+        decreaseBtn = findViewById(R.id.decreaseBtn);
 
 
         clickBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                counter_text.setText("" + zeroCounter());
+            }
+        });
+
+        increaseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 counter_text.setText("" + increaseCounter());
             }
         });
+
+        decreaseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                counter_text.setText("" + decreaseCounter());
+            }
+        });
+    }
+    public int decreaseCounter() {
+        return --counter;
     }
 
     public int increaseCounter() {
         return ++counter;
     }
+
+    public int zeroCounter(){
+        counter = 0;
+        return counter;
+    }
+
+
 }
